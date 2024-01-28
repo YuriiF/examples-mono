@@ -51,6 +51,9 @@
     "@nx/react": {
       "application": {
         "babel": true
+      },
+      "library": {
+        "unitTestRunner": "jest"
       }
     },
     "@nx/next": {
@@ -59,6 +62,10 @@
         "linter": "eslint"
       }
     }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
   },
   "nxCloudAccessToken": "YjkwOGZiMmYtNjMxMS00NWUxLThkMjEtMDNmYTVjMjMwMzMwfHJlYWQtd3JpdGU="
 }
