@@ -1,37 +1,36 @@
-import styles from './page.module.css';
-import { Button } from 'antd';
+import { Button, Space, Divider } from 'antd';
+import Image from 'next/image';
 
-export default async function Index() {
+const Home = function Home() {
   return (
-    <div className={styles.page}>
-      <div className="wrapper">
-        <div className="container">
-          <div id="welcome">
-            <h1>Nextjs 13 with Ant Design</h1>
-          </div>
-
-          <Button type="primary">Button</Button>
-
-          <footer>
-            <p id="love">
-              Carefully Crafted With
-              <svg
-                fill="currentColor"
-                stroke="none"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </p>
-          </footer>
-        </div>
-      </div>
-    </div>
+    <>
+      <section
+        style={{
+          textAlign: 'center',
+          marginTop: 48,
+          marginBottom: 40,
+          padding: 100,
+        }}
+      >
+        <Space align="start">
+          <Image
+            style={{ width: 40, height: 40 }}
+            width={40}
+            height={40}
+            src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+            alt="Ant Design"
+          />
+          <h2 style={{ marginBottom: 0 }}>
+            Ant Design (Without Sub Components - there is some problem with it)
+          </h2>
+        </Space>
+        <Divider style={{ marginBottom: 60 }}>Divider</Divider>
+        <Button type="primary" block href="/with-sub-components">
+          With Sub Components
+        </Button>
+      </section>
+    </>
   );
-}
+};
+
+export default Home;
