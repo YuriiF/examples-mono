@@ -21,6 +21,7 @@ jobs:
       init-commands: |
         yarn nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
+        yarn nx-cloud record -- yarn nx format:write
         yarn nx-cloud record -- yarn nx format:check
       parallel-commands-on-agents: |
         yarn nx affected --target=lint --parallel=3
