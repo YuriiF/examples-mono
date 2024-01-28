@@ -1,26 +1,24 @@
-import { Button, Divider } from 'antd';
+import { Col, Row } from 'antd';
 
-import { MainLayout } from '@examples/ui/layouts';
+const style: React.CSSProperties = { background: '#0092ff', padding: '8px 0' };
 
 const Home = function Home() {
   return (
-    <MainLayout>
-      <section
-        style={{
-          textAlign: 'center',
-          marginTop: 48,
-          marginBottom: 40,
-          padding: 100,
-          background: '#fff',
-          borderRadius: '4px',
-        }}
-      >
-        <Divider style={{ marginBottom: 60 }}>Divider</Divider>
-        <Button type="primary" block href="/with-sub-components">
-          With Sub Components
-        </Button>
-      </section>
-    </MainLayout>
+    <>
+      <Row>
+        <Col span={24} style={style}>
+          col
+        </Col>
+      </Row>
+      <Row>
+        <Col span={12} style={style}>
+          col-12
+        </Col>
+        <Col span={12} style={style}>
+          col-12
+        </Col>
+      </Row>
+    </>
   );
 };
 
