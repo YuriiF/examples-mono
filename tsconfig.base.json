@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@examples/ui/layouts": ["libs/ui/layouts/src/index.ts"],
       "@examples/ui/components": ["libs/ui/components/src/index.ts"],
       "@examples/ui/components/server": ["libs/ui/components/src/server.ts"],
+      "@examples/ui/layouts": ["libs/ui/layouts/src/index.ts"],
       "@examples/ui/layouts/server": ["libs/ui/layouts/src/server.ts"],
       "@examples/ui/pages": ["libs/ui/pages/src/index.ts"],
       "@examples/ui/pages/server": ["libs/ui/pages/src/server.ts"]
