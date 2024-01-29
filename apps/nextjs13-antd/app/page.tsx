@@ -1,21 +1,27 @@
 import { Col, Row } from 'antd';
 
-const style: React.CSSProperties = { background: '#0092ff', padding: '8px 0' };
+import {
+  ChartCard,
+  G2IntervalChart,
+  G2LineChart,
+} from '@examples/ui/components';
+
+const style: React.CSSProperties = { paddingTop: '24px', paddingBottom: '8px' };
 
 const Home = function Home() {
   return (
     <>
-      <Row>
+      <Row gutter={16}>
         <Col span={24} style={style}>
-          col
+          <h3 style={{ color: '#666' }}>Page Title</h3>
         </Col>
       </Row>
-      <Row>
+      <Row gutter={16}>
         <Col span={12} style={style}>
-          col-12
+          <ChartCard chart={<G2IntervalChart />} />
         </Col>
         <Col span={12} style={style}>
-          col-12
+          <ChartCard chart={<G2LineChart />} />
         </Col>
       </Row>
     </>
