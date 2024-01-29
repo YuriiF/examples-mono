@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.0",
+    "@antv/g2": "^5.1.15",
     "@nx/next": "17.2.8",
     "@swc/helpers": "~0.5.2",
     "antd": "^5.13.3",
