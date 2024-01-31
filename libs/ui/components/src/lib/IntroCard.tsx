@@ -17,10 +17,10 @@ export function IntroCard({ children }: IntroCardProps) {
         />
       }
       actions={[
-        <Button type="link" icon={<LoginOutlined />} block>
+        <Button type="link" icon={<LoginOutlined />} block href="/login">
           Login
         </Button>,
-        <Button type="link" block>
+        <Button type="link" block href="/register">
           Register
         </Button>,
       ]}
