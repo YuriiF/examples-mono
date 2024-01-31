@@ -1,4 +1,8 @@
 import './global.css';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Nextjs14 Ant Design Example',
@@ -13,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <AntdRegistry>
+        <body className={inter.className}>{children}</body>
+      </AntdRegistry>
     </html>
   );
 }
