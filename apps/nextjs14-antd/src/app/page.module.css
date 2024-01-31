@@ -2,3 +2,12 @@
   background-color: #ffffff30;
   padding: 48px 0;
 }
+
+.image {
+  border-radius: 8px;
+  height: 596px;
+}
+
+.col {
+  display: flex;
+}
