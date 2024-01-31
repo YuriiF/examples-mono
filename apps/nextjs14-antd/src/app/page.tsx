@@ -1,32 +1,32 @@
-// import styles from './page.module.css';
-'use client';
-import { Layout, Menu } from 'antd';
+import { Row, Col } from 'antd';
+import { IntroCard, Title, Paragraph } from '@examples/ui/components';
 
-const { Header, Content, Footer } = Layout;
+import styles from './page.module.css';
 
 export default function Index() {
   return (
-    <Layout>
-      <Header style={{ display: 'flex', alignItems: 'center' }}>
-        <div className="demo-logo" />
-        <Menu
-          theme="dark"
-          mode="horizontal"
-          defaultSelectedKeys={['1']}
-          items={[
-            { key: '1', label: 'Home' },
-            { key: '2', label: 'Login' },
-            { key: '3', label: 'Register' },
-          ]}
-          style={{ flex: 1, minWidth: 0 }}
-        />
-      </Header>
-      <Content>
-        <div>Content</div>
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>
-        Y.Y.F. ©{new Date().getFullYear()} Created by Yurii
-      </Footer>
-    </Layout>
+    <section className={styles.page}>
+      <Row>
+        <Col span={24}></Col>
+      </Row>
+      <Row>
+        <Col span={8}>
+          <IntroCard>
+            <Title level={3}>
+              Welcome to Next.js, AntD, Strapi, tRCP example.
+            </Title>
+            <Paragraph>
+              You can login. Or register to this demo.
+            </Paragraph>
+          </IntroCard>
+        </Col>
+        <Col span={16}></Col>
+      </Row>
+      <Row>
+        <Col span={8}></Col>
+        <Col span={8}></Col>
+        <Col span={8}></Col>
+      </Row>
+    </section>
   );
 }

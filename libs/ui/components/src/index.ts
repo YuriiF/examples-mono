@@ -2,3 +2,5 @@
 export * from './lib/G2IntervalChart';
 export * from './lib/G2LineChart';
 export * from './lib/ChartCard';
+export * from './lib/IntroCard';
+export * from './lib/Typography';
