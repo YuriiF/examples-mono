@@ -17,6 +17,8 @@
     "paths": {
       "@examples/ui/components": ["libs/ui/components/src/index.ts"],
       "@examples/ui/components/server": ["libs/ui/components/src/server.ts"],
+      "@examples/ui/forms": ["libs/ui/forms/src/index.ts"],
+      "@examples/ui/forms/server": ["libs/ui/forms/src/server.ts"],
       "@examples/ui/layouts": ["libs/ui/layouts/src/index.ts"],
       "@examples/ui/layouts/server": ["libs/ui/layouts/src/server.ts"],
       "@examples/ui/pages": ["libs/ui/pages/src/index.ts"],
