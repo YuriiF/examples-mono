@@ -4,3 +4,5 @@ export * from './lib/G2LineChart';
 export * from './lib/ChartCard';
 export * from './lib/IntroCard';
 export * from './lib/Typography';
+export * from './lib/fonts';
+export * from './lib/search';

@@ -3,7 +3,7 @@
 import { Chart } from '@antv/g2';
 import { useEffect, useRef } from 'react';
 
-export interface G2IntervalChartProps {}
+// export interface G2IntervalChartProps {}
 
 export function G2IntervalChart() {
   const container = useRef(null);
