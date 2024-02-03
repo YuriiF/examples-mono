@@ -15,6 +15,20 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@examples/auth": ["libs/auth/src/index.ts"],
+      "@examples/auth/server": ["libs/auth/src/server.ts"],
+      "@examples/features/customers": ["libs/features/customers/src/index.ts"],
+      "@examples/features/customers/server": [
+        "libs/features/customers/src/server.ts"
+      ],
+      "@examples/features/dashboard": ["libs/features/dashboard/src/index.ts"],
+      "@examples/features/dashboard/server": [
+        "libs/features/dashboard/src/server.ts"
+      ],
+      "@examples/features/invoices": ["libs/features/invoices/src/index.ts"],
+      "@examples/features/invoices/server": [
+        "libs/features/invoices/src/server.ts"
+      ],
       "@examples/ui/components": ["libs/ui/components/src/index.ts"],
       "@examples/ui/components/server": ["libs/ui/components/src/server.ts"],
       "@examples/ui/forms": ["libs/ui/forms/src/index.ts"],
