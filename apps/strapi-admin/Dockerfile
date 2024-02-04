@@ -10,7 +10,7 @@ ENV NODE_ENV=production
 
 # Copy the configuration files
 WORKDIR /opt/
-COPY ./package.json ./yarn.lock ./
+COPY ./package.json ./
 ENV PATH /opt/node_modules/.bin:$PATH
 
 # Install dependencies
