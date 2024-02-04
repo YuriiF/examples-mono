@@ -8,7 +8,8 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "seed:data": "strapi import -f -y seed-data-latest.tar.gz"
+    "export:data": "strapi export --no-encrypt -f seed-data-latest",
+    "seed:data": "strapi import -f seed-data-latest.tar.gz"
   },
   "devDependencies": {},
   "dependencies": {
@@ -16,7 +17,7 @@
     "@strapi/plugin-users-permissions": "4.19.1",
     "@strapi/plugin-i18n": "4.19.1",
     "@strapi/plugin-cloud": "4.19.1",
-    "pg": "^8.11.3",
+    "pg": "8.8.0",
     "pg-connection-string": "^2.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
