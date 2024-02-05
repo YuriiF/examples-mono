@@ -11,6 +11,7 @@ import {
 } from '@examples/features/dashboard';
 
 import { Cards } from '@examples/features/dashboard/server';
+import { fetchCoronaData } from '@examples/auth';
 
 import {
   ChartCard,
@@ -20,6 +21,7 @@ import {
 } from '@examples/ui/components';
 
 export default async function Page() {
+  const coronaData = await fetchCoronaData();
   return (
     <>
       <Title level={2}>Dashboard (Page Title)</Title>
@@ -29,12 +31,12 @@ export default async function Page() {
         </Suspense>
         <Suspense fallback={<RevenueChartSkeleton />}>
           <Col span={12}>
-            <ChartCard chart={<G2IntervalChart />} />
+            <ChartCard chart={<G2IntervalChart data={coronaData} />} />
           </Col>
         </Suspense>
         <Col span={12}>
           <Suspense fallback={<LatestInvoicesSkeleton />}>
-            <ChartCard chart={<G2LineChart />} />
+            <ChartCard chart={<G2LineChart data={coronaData}/>} />
           </Suspense>
         </Col>
         <Suspense fallback={<RevenueChartSkeleton />}>

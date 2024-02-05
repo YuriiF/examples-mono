@@ -3,9 +3,11 @@
 import { Chart } from '@antv/g2';
 import { useEffect, useRef } from 'react';
 
-export interface G2LineChartProps {}
+export interface G2LineChartProps {
+  data?: unknown;
+}
 
-export function G2LineChart() {
+export function G2LineChart({ data }: G2LineChartProps) {
   const container = useRef(null);
   const chart = useRef(null);
 
@@ -25,17 +27,15 @@ export function G2LineChart() {
 
     chart
       .line()
-      .data({
-        type: 'fetch',
-        value:
-          'https://gw.alipayobjects.com/os/bmw-prod/728a4bdc-9d0b-49e0-a92f-6320a6cddeed.csv',
-      })
+      .data(data)
       .encode('x', 'date')
-      .encode('y', 'unemployment')
-      .encode('series', 'division');
+      .encode('y', 'newCases')
+      .encode('series', 'country');
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    chart.interaction('tooltip', { filter: (d: any, i: any) => i < 10 });
+    chart.interaction('tooltip', {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      filter: (d: any, i: number) => i < 10,
+    });
 
     chart.render();
 

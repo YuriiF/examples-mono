@@ -8,6 +8,23 @@ import { formatCurrency } from './utils';
 
 const STRAPI_URL = process.env.STRAPI_URL;
 
+const endpoint = (
+  'https://api.coronavirus.data.gov.uk/v1/data?' +
+  'filters=areaType=nation;areaName=england&' +
+  'structure={"date":"date","newCases":"newCasesByPublishDate"}'
+);
+export async function fetchCoronaData() {
+  try {
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    const flatten = flattenAttributes(data.data);
+    return flatten;
+  } catch (error) {
+    console.error('Failed to fetch corona data:', error);
+    throw new Error('Failed to fetch corona data.');
+  }
+}
+
 export async function fetchRevenue() {
   const authToken = cookies().get('jwt')?.value;
   if (!authToken) return redirect('/login');

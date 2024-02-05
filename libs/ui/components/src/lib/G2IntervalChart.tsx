@@ -3,9 +3,11 @@
 import { Chart } from '@antv/g2';
 import { useEffect, useRef } from 'react';
 
-// export interface G2IntervalChartProps {}
+export interface G2IntervalChartProps {
+  data?: unknown;
+}
 
-export function G2IntervalChart() {
+export function G2IntervalChart({ data }: G2IntervalChartProps) {
   const container = useRef(null);
   const chart = useRef(null);
 
@@ -23,19 +25,19 @@ export function G2IntervalChart() {
       autoFit: true,
     });
 
-    const data = [
-      { genre: 'Sports', sold: 275 },
-      { genre: 'Strategy', sold: 115 },
-      { genre: 'Action', sold: 120 },
-      { genre: 'Shooter', sold: 350 },
-      { genre: 'Other', sold: 150 },
-    ];
+    // const data = [
+    //   { genre: 'Sports', sold: 275 },
+    //   { genre: 'Strategy', sold: 115 },
+    //   { genre: 'Action', sold: 120 },
+    //   { genre: 'Shooter', sold: 350 },
+    //   { genre: 'Other', sold: 150 },
+    // ];
 
     chart
       .interval()
       .data(data)
-      .encode('x', 'genre')
-      .encode('y', 'sold')
+      .encode('x', 'date')
+      .encode('y', 'newCases')
       .encode('key', 'genre')
       // @ts-ignore
       .animate('updateDuration', 300);
@@ -62,5 +64,3 @@ export function G2IntervalChart() {
 
   return <div ref={container}></div>;
 }
-
-// export default G2IntervalChart;
