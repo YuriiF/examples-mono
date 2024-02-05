@@ -1,11 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useFormState } from 'react-dom';
-import { Button, Space, Input, Card } from 'antd';
+import Button from 'antd/lib/button';
+import Input from 'antd/lib/input';
+import Card from 'antd/lib/card';
+import Space from 'antd/lib/space';
+import Password from 'antd/lib/input/Password';
 import { loginAction } from '@examples/auth/server';
-
-// import styles from './LoginForm.module.css';
 
 export interface FieldType {
   identifier?: string;
@@ -30,7 +31,7 @@ export function LoginForm() {
             name="identifier"
             id="identifier"
           />
-          <Input.Password
+          <Password
             prefix={<LockOutlined className="site-form-item-icon" />}
             type="password"
             placeholder="Password"

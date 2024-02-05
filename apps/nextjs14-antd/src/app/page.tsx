@@ -31,11 +31,6 @@ export default function Index() {
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col span={8}></Col>
-        <Col span={8}></Col>
-        <Col span={8}></Col>
-      </Row>
     </section>
   );
 }

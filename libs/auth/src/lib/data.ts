@@ -122,7 +122,6 @@ export async function fetchCardData() {
     const totalPendingInvoices = formatCurrency(data[2].data.totalOwed);
     const totalPaidInvoices = formatCurrency(data[3].data.totalPaid);
 
-    console.log(totalPaidInvoices, totalPendingInvoices);
     return {
       numberOfInvoices,
       numberOfCustomers,
