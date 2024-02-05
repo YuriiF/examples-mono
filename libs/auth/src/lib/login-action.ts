@@ -9,8 +9,7 @@ const formSchema = z.object({
   password: z.string().min(6).max(100),
 });
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function loginAction(prevState: any, formData: any) {
+export async function loginAction(prevState = {}, formData: FormData) {
   const STRAPI_URL = process.env.STRAPI_URL;
   if (!STRAPI_URL) throw new Error('Missing STRAPI_URL environment variable.');
   const url = `${STRAPI_URL}/api/auth/local`;
@@ -19,8 +18,6 @@ export async function loginAction(prevState: any, formData: any) {
     identifier: formData.get('identifier'),
     password: formData.get('password'),
   });
-
-  console.log('validatedFields :', validatedFields);
 
   if (!validatedFields.success) {
     return {
@@ -32,8 +29,7 @@ export async function loginAction(prevState: any, formData: any) {
   const { identifier, password } = validatedFields.data;
 
   try {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const response: any = await fetch(url, {
+    const response: Response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

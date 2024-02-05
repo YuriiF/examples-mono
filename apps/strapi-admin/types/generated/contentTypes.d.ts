@@ -882,6 +882,27 @@ export interface ApiRevenueRevenue extends Schema.CollectionType {
   };
 }
 
+export interface ApiTestTest extends Schema.CollectionType {
+  collectionName: 'tests';
+  info: {
+    singularName: 'test';
+    pluralName: 'tests';
+    displayName: 'Test';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name_of_test: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::test.test', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -903,6 +924,7 @@ declare module '@strapi/types' {
       'api::customer.customer': ApiCustomerCustomer;
       'api::invoice.invoice': ApiInvoiceInvoice;
       'api::revenue.revenue': ApiRevenueRevenue;
+      'api::test.test': ApiTestTest;
     }
   }
 }
