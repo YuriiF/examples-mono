@@ -25,14 +25,6 @@ export function G2IntervalChart({ data }: G2IntervalChartProps) {
       autoFit: true,
     });
 
-    // const data = [
-    //   { genre: 'Sports', sold: 275 },
-    //   { genre: 'Strategy', sold: 115 },
-    //   { genre: 'Action', sold: 120 },
-    //   { genre: 'Shooter', sold: 350 },
-    //   { genre: 'Other', sold: 150 },
-    // ];
-
     chart
       .interval()
       .data(data)
@@ -46,21 +38,6 @@ export function G2IntervalChart({ data }: G2IntervalChartProps) {
 
     return chart;
   }
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // function updateBarChart(chart: any) {
-  //   const interval = chart.getNodesByType('interval')[0];
-
-  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  //   const newData = interval.data().map((d: any) => ({
-  //     ...d,
-  //     sold: Math.random() * 400 + 100,
-  //   }));
-
-  //   interval.data(newData);
-
-  //   chart.render();
-  // }
 
   return <div ref={container}></div>;
 }
